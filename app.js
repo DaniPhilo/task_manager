@@ -7,12 +7,8 @@ require('dotenv').config();
 
 const port = 3000;
 
+app.use(express.static('./public'));
 app.use(express.json());
-
-// Routes:
-app.get('/hello', (req, res) => {
-    res.send('Hello world');
-});
 
 app.use('/api/v1/tasks', tasks);
 

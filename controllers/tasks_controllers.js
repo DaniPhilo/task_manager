@@ -23,6 +23,7 @@ const getTask = async (req, res) => {
 }
 const createTask = async (req, res) => {
     try {
+        console.log(req.body)
         const task = await Task.create(req.body);
         res.status(201).json(task);
     }
