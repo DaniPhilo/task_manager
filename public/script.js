@@ -9,7 +9,7 @@ const getTasks = async () => {
         tasks.map(task => {
             tasksContainer.innerHTML += `<div class="task-element">
                                             <p>${task.name}</p>
-                                            <button type="button" id="edit-btn">Edit</button>
+                                            <a href='edit_task.html?task=${task._id}'>Edit</a>
                                             <button type="button" id="delete-btn" data-id="${task._id}">Delete</button>
                                          </div>`;
         })
