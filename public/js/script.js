@@ -7,11 +7,13 @@ const getTasks = async () => {
         const data = await response.json();
         const tasks = data.tasks;
         tasks.map(task => {
-            tasksContainer.innerHTML += `<div class="task-element">
+            document.body.innerHTML += `<div class="task-element">
                                             <p>${task.name}</p>
-                                            <a href='edit_task.html?task=${task._id}'>Edit</a>
-                                            <button type="button" id="delete-btn" data-id="${task._id}">Delete</button>
-                                         </div>`;
+                                            <div class="buttons-div">
+                                                <a href='edit_task.html?task=${task._id}'>Edit</a>
+                                                <button type="button" id="delete-btn" data-id="${task._id}">Delete</button>
+                                            </div>
+                                          </div>`;
         })
     } catch (error) {
         console.log(error)
